@@ -1,0 +1,3 @@
+En ce moment, on travaille {% for project in projects %}
+sur <a href="{{ project.url }}">{{ project.name | downcase }}</a> avec <em>{{ customers[ project.customer ].name }}</em>, {% endfor %}
+entre autres.

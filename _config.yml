@@ -6,13 +6,24 @@ url: https://dtc-innovation.org
 
 permalink: /writings/:year/:title
 
+default_locale: en
+locales:
+  en: English
+  fr: Français
+
 collections:
-  projects:
+  projects_en:
     output: true
-    permalink: /projects/:title
+    permalink: /en/projects/:title
     resources:
       github: GitHub Project
       website: Website
+  projects_fr:
+    output: true
+    permalink: /fr/projets/:title
+    resources:
+      github: Projet GitHub
+      website: Site web
   assemblies:
     output: true
     permalink: /dna/assemblies/:slug.html
@@ -24,21 +35,30 @@ company:
   vat: 'FR67823553557'
   rna: 'W332020707'
   ape: '6201Z'
-  since: 2016-09-16
+  since: 2016-10-05
 
 defaults:
   - scope:
-      path: ""
+      path: "fr"
+    values:
+      lang: "fr"
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
       type: "posts"
     values:
       layout: "writing"
   - scope:
-      path: ""
-      type: "projects"
+      type: "projects_en"
     values:
       layout: "project"
   - scope:
-      path: ""
+      type: "projects_fr"
+    values:
+      layout: "project"
+  - scope:
       type: "assemblies"
     values:
       layout: "page"

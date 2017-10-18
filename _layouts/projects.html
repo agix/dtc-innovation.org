@@ -8,7 +8,7 @@ layout: base
 
 <section>
   <div class="cards">
-  {% assign projects = site.projects | sort: "title"  %}
+  {% assign projects = site.projects_en | sort: "title"  %}
   {% for project in projects %}
   {% include projects/card-in-list.html project=project %}
   {% endfor %}
